@@ -1,0 +1,33 @@
+{
+  "name": "blog-frontend-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:charleylla/blog-frontend-site.git",
+  "author": "Charley <charleylla@foxmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next build && next start"
+  },
+  "dependencies": {
+    "next": "^4.2.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "lost": "^8.2.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-nested": "^3.0.0",
+    "raw-loader": "^0.5.1",
+    "styled-jsx-plugin-postcss": "^0.1.2"
+  },
+  "postcss": {
+    "plugins": {
+      "lost": {},
+      "postcss-nested": {},
+      "autoprefixer":{}
+    }
+  }
+}
