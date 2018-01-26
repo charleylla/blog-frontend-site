@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
+    "cssnano": "^3.10.0",
     "lost": "^8.2.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-nested": "^3.0.0",
@@ -27,7 +28,8 @@
     "plugins": {
       "lost": {},
       "postcss-nested": {},
-      "autoprefixer":{}
+      "autoprefixer": {},
+      "cssnano": {}
     }
   }
 }

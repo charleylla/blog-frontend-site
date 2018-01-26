@@ -1,6 +1,4 @@
 import React,{ Component } from "react";
-import Head from "next/head";
-// import style from "./style";
 export default class Articel extends Component{
     render(){
         return(
@@ -31,3 +29,4 @@ export default class Articel extends Component{
         );
     }
 }
+
