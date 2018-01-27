@@ -1,10 +1,16 @@
 import React,{ Component } from "react";
-export default class Articel extends Component{
+import ArticleList from "@components/ArticleList"
+import { connect } from "./connect";
+
+@connect
+class Article extends Component{
     render(){
+        const { list_on,switch_list_state } = this.props;
         return(
             <div className="article-box__title">
                 Artical Lists
-                <p>Para</p>
+                <button onClick={switch_list_state}>switch article list</button>
+                <ArticleList show={list_on}/>
                 <style jsx>{`
                     .article-box__title {
                         background: red;
@@ -13,9 +19,6 @@ export default class Articel extends Component{
                         width:100%;
                         p{
                             color:#fff;
-                        }
-                        &:hover{
-                            font-size:30px;
                         }
                     }
                     @media (max-width: 600px) {
@@ -30,3 +33,4 @@ export default class Articel extends Component{
     }
 }
 
+export default Article;
