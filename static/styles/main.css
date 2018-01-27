@@ -1,0 +1,9 @@
+.main__nav,
+.main__content,
+.main__footer{
+    display:flex;
+    margin:0 auto;
+    max-width:1200px;
+    height:100px;
+    background-color: red;
+}

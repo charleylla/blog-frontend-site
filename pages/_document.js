@@ -12,6 +12,8 @@ export default class MyDocument extends Document {
         return (
             <html>
             <Head>
+                <link rel="stylesheet" href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css"/>
+                <link rel="stylesheet" href="/static/styles/main.css"/>
                 <script src="https://cdn.bootcss.com/babel-polyfill/6.26.0/polyfill.min.js"></script>
             </Head>
             <body className="custom_class">
