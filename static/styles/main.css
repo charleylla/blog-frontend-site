@@ -1,0 +1,12 @@
+html,body{
+    background:#ececec;
+    height: 1000px;
+}
+
+.nav__box,
+.content__box,
+.footer__box{
+    display:flex;
+    margin:0 auto;
+    max-width:1200px;
+}

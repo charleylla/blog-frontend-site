@@ -1,0 +1,1 @@
+export const SHOW_ARTICLE_LIST = "SHOW_ARTICLE_LIST";
