@@ -7,8 +7,6 @@ export default class Nav extends Component{
     }
 
     _initbind(){
-        this.switchNavBar = this.switchNavBar.bind(this)
-        this.switchSearchBox = this.switchSearchBox.bind(this)
         this.switchAnimate = this.switchAnimate.bind(this)
     }
 
@@ -28,46 +26,42 @@ export default class Nav extends Component{
         }];
     }
 
-    switchAnimate(key){
-        const currentAnimate = this.animateDesc[key];
-        return() => {
-            this.animateDesc.forEach((v,k) => {
-                const 
-                    barClassList = this.refs[v.barRef].classList,
-                    contentClassList = this.refs[v.contentRef].classList;
-                
-                const isCurrent = (k === key);
-                if(!isCurrent) return;
-                const { show } = v;
-                if(isCurrent && show){
-                    
+    execAnimate(index){
+        let animateArr;
+        if(index === -1) animateArr = this.animateDesc;
+        else animateArr = [this.animateDesc[index]];
+        animateArr.forEach((v,k) => {
+            const 
+                barClassList = this.refs[v.barRef].classList,
+                contentClassList = this.refs[v.contentRef].classList;
+            
+            const { barOffClassName,barOnClassName } = v;
+            barClassList.remove("zoomIn");
+            contentClassList.remove("slideInDown","slideOutUp");
+            requestAnimationFrame(() => {
+                if(barClassList.contains(barOffClassName)){
+                    barClassList.remove(barOffClassName);
+                    barClassList.add(barOnClassName,"zoomIn");
+                    contentClassList.remove("hide");
+                    contentClassList.add("slideInDown");
+                }else{
+                    barClassList.remove(barOnClassName);
+                    barClassList.add(barOffClassName,"zoomIn");
+                    contentClassList.add("slideOutUp");
                 }
+                v.show = !v.show;
+            })
+        })
+    }
 
-
-
-
-
-
-
-
-
-
-
-                barClassList.remove("zoomIn");
-                contentClassList.remove("slideInDown","slideOutUp");
-                requestAnimationFrame(() => {
-                    if(barClassList.contains([v.barOffClassName])){
-                        barClassList.remove(v.barOffClassName);
-                        barClassList.add(v.barOnClassName,"zoomIn");
-                        contentClassList.remove("hide");
-                        contentClassList.add("slideInDown");
-                    }else{
-                        barClassList.remove(v.barOnClassName);
-                        barClassList.add(v.barOffClassName,"zoomIn");
-                        contentClassList.add("slideOutUp");
-                    }
-                })
+    switchAnimate(index){
+        return() => {
+            const switchFlag = this.animateDesc.some((v,k) => {
+                if(k === index)return;
+                return v.show;
             });
+            const switchIndex = switchFlag ? -1 : index;
+            this.execAnimate(switchIndex);
         }
     }
 
@@ -93,8 +87,8 @@ export default class Nav extends Component{
                             Hello World
                         </div>
                     </header>
-                    <div ref="navcontent" className="animated hide nav__content"></div>
-                    <div ref="searchcontent" className="animated hide search__content"></div>
+                    <div ref="navcontent" className="animated hide nav__content">导航</div>
+                    <div ref="searchcontent" className="animated hide search__content">搜索</div>
                 </div>
                 <style jsx>{`
                     /* nav layout goes here */
