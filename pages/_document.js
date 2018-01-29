@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
                 <link rel="stylesheet" href="/static/styles/main.css"/>
                 <script src="https://cdn.bootcss.com/babel-polyfill/6.26.0/polyfill.min.js"></script>
             </Head>
-            <body className="custom_class">
+            <body>
                 {this.props.customValue}
                 <Main />
                 <NextScript />

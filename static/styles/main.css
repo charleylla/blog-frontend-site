@@ -3,10 +3,49 @@ html,body{
     height: 1000px;
 }
 
-.nav__box,
-.content__box,
-.footer__box{
-    display:flex;
+@media screen and (max-width:1920px){
+    .screen-madia__main{
+        max-width: 1366px;
+    }
+}
+
+@media screen and (max-width:1440px){
+    .screen-madia__main{
+        max-width: 1128px;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .screen-madia__main{
+        max-width: 960px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .screen-madia__main{
+        max-width: 708px;
+    }
+}
+
+@media screen and (max-width:720px){
+    .screen-madia__main{
+        max-width: 540px;
+    }
+}
+
+@media screen and (max-width:720px){
+    .screen-madia__main{
+        max-width: 540px;
+    }
+}
+
+@media screen and (max-width:580px){
+    .screen-madia__main{
+        max-width: 360px;
+        min-width: 360px;
+    }
+}
+
+.screen-madia__main{
     margin:0 auto;
-    max-width:1200px;
 }
