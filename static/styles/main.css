@@ -11,7 +11,7 @@ html,body{
 
 @media screen and (max-width:1440px){
     .screen-madia__main{
-        max-width: 1128px;
+        max-width: 1120px;
     }
 }
 
@@ -23,13 +23,7 @@ html,body{
 
 @media screen and (max-width:1000px){
     .screen-madia__main{
-        max-width: 708px;
-    }
-}
-
-@media screen and (max-width:720px){
-    .screen-madia__main{
-        max-width: 540px;
+        max-width: 700px;
     }
 }
 
@@ -49,3 +43,92 @@ html,body{
 .screen-madia__main{
     margin:0 auto;
 }
+
+/* common layout goes here*/
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* common nav layout */
+.header__menu-bar--off{
+    color: #000;
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background-color: #242424;
+}
+  
+.header__menu-bar--off:before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    background-color: #242424;
+}
+  
+.header__menu-bar--off:after {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    background-color: #242424;
+}
+  
+.header__menu-bar--on {
+    color: #000;
+    position: absolute;
+    margin-top: 0;
+    margin-left: 0;
+    width: 21px;
+    height: 21px;
+}
+  
+.header__menu-bar--on:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 25px;
+    height: 2px;
+    background-color: #242424;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+  
+.header__menu-bar--on:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 25px;
+    height: 2px;
+    background-color: #242424;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+  
+.header__center__search-icon {
+    color: #242424;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: solid 2px #242424;
+    border-radius: 100%;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+  
+.header__center__search-icon:before {
+    content: '';
+    position: absolute;
+    top: 17px;
+    left: 5px;
+    height: 6px;
+    width: 2px;
+    background-color: #242424;
+}
+  
+  
