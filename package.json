@@ -6,7 +6,7 @@
   "author": "Charley <charleylla@foxmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 8007",
     "build": "next build",
     "start": "next build && next start"
   },
