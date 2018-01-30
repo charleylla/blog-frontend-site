@@ -1,10 +1,13 @@
 import React,{ Component } from "react";
+import Mask from "@components/Mask";
 import stylesheet from "./style.css";
+
 export default class Nav extends Component{
     constructor(props){
         super(props)
         this.state={
             searchKeyWords:"",
+            firstApperence:true,
         }
         this._initbind();
         this._init();
@@ -15,6 +18,7 @@ export default class Nav extends Component{
         this.execAnimate = this.execAnimate.bind(this);
         this.changeSearchValue = this.changeSearchValue.bind(this);
         this.resetSearchValue = this.resetSearchValue.bind(this);
+        this.switchMaskApperence = this.switchMaskApperence.bind(this);
     }
 
     _init(){
@@ -46,6 +50,14 @@ export default class Nav extends Component{
         })
     }
 
+    switchMaskApperence(){
+        const maskShowFlag = this.animateDesc.some((v) => {
+            return v.show;
+        });
+        const { switch_mask_apperence } = this.props;
+        switch_mask_apperence(maskShowFlag)
+    }
+
     execAnimate(index){
         let animateArr;
         if(index === -1) animateArr = this.animateDesc;
@@ -56,6 +68,7 @@ export default class Nav extends Component{
                 contentClassList = this.refs[v.contentRef].classList;
             
             const { barOffClassName,barOnClassName } = v;
+            v.show = !v.show;
             barClassList.remove("zoomIn");
             contentClassList.remove("slideInDown","slideOutUp");
             requestAnimationFrame(() => {
@@ -67,12 +80,13 @@ export default class Nav extends Component{
                 }else{
                     barClassList.remove(barOnClassName);
                     barClassList.add(barOffClassName,"zoomIn");
+                    contentClassList.remove("hide");
                     contentClassList.add("slideOutUp");
                 }
-                v.show = !v.show;
             })
         });
         this.resetSearchValue();
+        this.switchMaskApperence();
     }
 
     switchAnimate(index){
@@ -88,16 +102,17 @@ export default class Nav extends Component{
 
     render(){
         const { searchKeyWords } = this.state;
+        const { mask_on } = this.props;
+        const fixClassName = mask_on ? "mask--active" : "";
         return(
             <nav>
                 <div className="screen-madia__main">
-                    <header className="flex">
+                    <header className={`flex ${fixClassName}`}>
                         <div className="flex header__left">
                             <div className="header__logo">LOGO</div>
                             <div className="flex header__menu-bar">
                                 <div 
                                     onClick={this.switchAnimate(0)} 
-                                    onTouchEnd={this.switchAnimate(0)} 
                                     className="flex header__menu-wrap"
                                 >
                                     <div 
@@ -110,7 +125,6 @@ export default class Nav extends Component{
                         <div className="flex header__center">
                             <label 
                                 onClick={this.switchAnimate(1)} 
-                                onTouchEnd={this.switchAnimate(1)} 
                                 htmlFor="search-input"
                             >
                                 <span 
@@ -125,13 +139,17 @@ export default class Nav extends Component{
                     </header>
                     <div 
                         ref="navcontent" 
-                        className="animated hide nav__content"
+                        className={`animated hide nav__content ${fixClassName}`}
                     >
-                        导航
+                        <ul>
+                            <li>首页</li>
+                            <li>专题</li>
+                            <li>关于</li>
+                        </ul>
                     </div>
                     <div 
                         ref="searchcontent"
-                        className="flex animated hide search__content"
+                        className={`flex animated hide search__content ${fixClassName}`}
                     >
                         <p>搜索本站</p>
                         <input 
@@ -142,6 +160,7 @@ export default class Nav extends Component{
                         />
                     </div>
                 </div>
+                <Mask mask_on={mask_on} />
                 <style jsx>{stylesheet}</style>
             </nav>
         );

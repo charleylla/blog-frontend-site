@@ -21,7 +21,9 @@
                     "@components": "./components",
                     "@actions": "./actions",
                     "@reducers": "./reducers",
-                    "@store": "./store"
+                    "@store": "./store",
+                    "@pages": "./pages",
+                    "@connects": "./connects",
                 }
             }
         ],

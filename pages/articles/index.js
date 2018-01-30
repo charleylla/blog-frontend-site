@@ -1,6 +1,6 @@
 import React,{ Component } from "react";
 import ArticleList from "@components/ArticleList"
-import { connect } from "./connect";
+import { connect } from "@connects/articles";
 
 @connect
 class Article extends Component{
