@@ -3,12 +3,18 @@ import stylesheet from "./style.css";
 export default class Nav extends Component{
     constructor(props){
         super(props)
+        this.state={
+            searchKeyWords:"",
+        }
         this._initbind();
         this._init();
     }
 
     _initbind(){
-        this.switchAnimate = this.switchAnimate.bind(this)
+        this.switchAnimate = this.switchAnimate.bind(this);
+        this.execAnimate = this.execAnimate.bind(this);
+        this.changeSearchValue = this.changeSearchValue.bind(this);
+        this.resetSearchValue = this.resetSearchValue.bind(this);
     }
 
     _init(){
@@ -25,6 +31,19 @@ export default class Nav extends Component{
             barOnClassName:"header__menu-bar--on",
             show:false
         }];
+    }
+
+    changeSearchValue(e){
+        const searchKeyWords = e.target.value;
+        this.setState({
+            searchKeyWords
+        })
+    }
+
+    resetSearchValue(){
+        this.setState({
+            searchKeyWords:""
+        })
     }
 
     execAnimate(index){
@@ -52,7 +71,8 @@ export default class Nav extends Component{
                 }
                 v.show = !v.show;
             })
-        })
+        });
+        this.resetSearchValue();
     }
 
     switchAnimate(index){
@@ -67,6 +87,7 @@ export default class Nav extends Component{
     }
 
     render(){
+        const { searchKeyWords } = this.state;
         return(
             <nav>
                 <div className="screen-madia__main">
@@ -74,13 +95,13 @@ export default class Nav extends Component{
                         <div className="flex header__left">
                             <div className="header__logo">LOGO</div>
                             <div className="flex header__menu-bar">
-                                <div onClick={this.switchAnimate(0)} onTouchEnd={this.switchNavBar} className="flex header__menu-wrap">
+                                <div onClick={this.switchAnimate(0)} onTouchEnd={this.switchAnimate(0)} className="flex header__menu-wrap">
                                     <div ref="menubar" className="animated header__menu-bar--off"></div>
                                 </div>
                             </div>
                         </div>
                         <div className="flex header__center">
-                            <label onClick={this.switchAnimate(1)} htmlFor="search-input">
+                            <label onClick={this.switchAnimate(1)} onTouchEnd={this.switchAnimate(1)} htmlFor="search-input">
                                 <span ref="searchbar" className="animated header__center__search-icon"></span>
                             </label>
                         </div>
@@ -89,7 +110,15 @@ export default class Nav extends Component{
                         </div>
                     </header>
                     <div ref="navcontent" className="animated hide nav__content">导航</div>
-                    <div ref="searchcontent" className="animated hide search__content">搜索</div>
+                    <div ref="searchcontent" className="flex animated hide search__content">
+                        <p>搜索本站</p>
+                        <input 
+                            value={searchKeyWords} 
+                            onInput={this.changeSearchValue}
+                            id="search-input" 
+                            placeholder="按关键字搜索文章、专题"
+                        />
+                    </div>
                 </div>
                 <style jsx>{stylesheet}</style>
             </nav>
