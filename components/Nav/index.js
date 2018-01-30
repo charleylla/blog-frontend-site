@@ -95,22 +95,44 @@ export default class Nav extends Component{
                         <div className="flex header__left">
                             <div className="header__logo">LOGO</div>
                             <div className="flex header__menu-bar">
-                                <div onClick={this.switchAnimate(0)} onTouchEnd={this.switchAnimate(0)} className="flex header__menu-wrap">
-                                    <div ref="menubar" className="animated header__menu-bar--off"></div>
+                                <div 
+                                    onClick={this.switchAnimate(0)} 
+                                    onTouchEnd={this.switchAnimate(0)} 
+                                    className="flex header__menu-wrap"
+                                >
+                                    <div 
+                                        ref="menubar" 
+                                        className="animated header__menu-bar--off"
+                                    />
                                 </div>
                             </div>
                         </div>
                         <div className="flex header__center">
-                            <label onClick={this.switchAnimate(1)} onTouchEnd={this.switchAnimate(1)} htmlFor="search-input">
-                                <span ref="searchbar" className="animated header__center__search-icon"></span>
+                            <label 
+                                onClick={this.switchAnimate(1)} 
+                                onTouchEnd={this.switchAnimate(1)} 
+                                htmlFor="search-input"
+                            >
+                                <span 
+                                    ref="searchbar" 
+                                    className="animated header__center__search-icon"
+                                />
                             </label>
                         </div>
                         <div className="flex header__right">
                             Hello World
                         </div>
                     </header>
-                    <div ref="navcontent" className="animated hide nav__content">导航</div>
-                    <div ref="searchcontent" className="flex animated hide search__content">
+                    <div 
+                        ref="navcontent" 
+                        className="animated hide nav__content"
+                    >
+                        导航
+                    </div>
+                    <div 
+                        ref="searchcontent"
+                        className="flex animated hide search__content"
+                    >
                         <p>搜索本站</p>
                         <input 
                             value={searchKeyWords} 
