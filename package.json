@@ -27,9 +27,11 @@
     "babel-plugin-transform-function-bind": "^6.22.0",
     "cssnano": "^3.10.0",
     "lost": "^8.2.0",
+    "postcss-cssnext": "^3.1.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-nested": "^3.0.0",
     "raw-loader": "^0.5.1",
+    "styled-jsx-css-loader": "^0.3.0",
     "styled-jsx-plugin-postcss": "^0.1.2"
   },
   "postcss": {
@@ -37,7 +39,8 @@
       "lost": {},
       "postcss-nested": {},
       "autoprefixer": {},
-      "cssnano": {}
+      "cssnano": {},
+      "postcss-cssnext":{}
     }
   }
 }
