@@ -14,10 +14,11 @@ export default class MyDocument extends Document {
             <Head>
                 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
                 <link rel="stylesheet" href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css"/>
+                <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet"/>
                 <link rel="stylesheet" href="/static/styles/main.css"/>
                 <script src="https://cdn.bootcss.com/babel-polyfill/6.26.0/polyfill.min.js"></script>
             </Head>
-            <body className="custom_class">
+            <body>
                 {this.props.customValue}
                 <Main />
                 <NextScript />
