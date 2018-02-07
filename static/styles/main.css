@@ -1,48 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+    color: #000;
+}
+
 html,body{
     background:#ececec;
     height: 1000px;
 }
 
 @media screen and (max-width:1920px){
-    .screen-madia__main{
+    .screen-madia__main,.banner{
         max-width: 1366px;
     }
 }
 
 @media screen and (max-width:1440px){
-    .screen-madia__main{
+    .screen-madia__main,.banner{
         max-width: 1120px;
     }
 }
 
 @media screen and (max-width:1200px){
-    .screen-madia__main{
+    .screen-madia__main,.banner{
         max-width: 960px;
     }
 }
 
 @media screen and (max-width:1000px){
-    .screen-madia__main{
+    .screen-madia__main,.banner{
         max-width: 700px;
     }
+    
 }
 
 @media screen and (max-width:720px){
-    .screen-madia__main{
+    .screen-madia__main,.banner{
         max-width: 540px;
     }
 }
 
 @media screen and (max-width:580px){
-    .screen-madia__main{
+    .screen-madia__main,.banner{
         max-width: 360px;
         min-width: 360px;
     }
 }
 
-.screen-madia__main{
+.screen-madia__main,.banner{
     margin:0 auto;
 }
+
 
 /* common layout goes here*/
 .flex{

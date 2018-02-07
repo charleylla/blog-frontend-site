@@ -32,7 +32,8 @@ nav{
     width:var(--full-width);
     position: fixed;
     left:0;
-    top:0;    
+    top:0;
+    z-index: var(--header-z-index); 
 
     .animated{
         animation-duration:var(--animate-dura);

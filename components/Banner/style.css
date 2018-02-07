@@ -1,0 +1,167 @@
+/* nav layout goes here */
+:root{
+    --normal-height:60px;
+
+}
+/* @media screen and (max-width: 1439px) and (min-width: 1200px){
+
+} */
+
+/* @custom-media:--medium-viewport (max-width: 1439px) and (min-width: 1200px)
+@media (--medium-viewport){
+   
+} */
+
+.banner{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 120px;
+    color: #404040;
+    border-top: 1px solid #ececec;
+    background-color: #ececec;
+    z-index:0;
+
+    .carousel__left{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        /* width: 402px; 
+        height: 462px;
+        */
+        height: 462px;
+        background-color: #fff;
+        border-right: 1px solid #ececec;
+
+        .carousel__left__top{
+            flex:1;
+            position: relative;
+            border-bottom: 1px solid #ececec;
+
+            .banner__day__left{
+                /* width: 12vw; */
+                width: 40%;
+
+                .banner__day__num{
+                    font-size:140px;
+                    text-align: center;
+                    font-family: Good Pro Condensed,sans-serif;
+                }
+                .banner__day__text{
+                    color: #9a9a9a;
+                    text-indent: 1em;
+                }
+
+            }
+
+            .button__share{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                height: 32px;
+                line-height: 30px;
+                text-decoration: none;
+                color: #8e8e8e;
+                background-color: #fff;
+                border: 1px solid #d6d6d6;
+                border-radius: 4px;
+                font-size: 14px;
+                line-height: 18px;
+                text-align: left;
+                padding: 0 12px;
+                margin-bottom: 5px;
+                cursor:pointer;
+            }
+        }
+        .carousel__left__bottom{
+            flex:1.2;
+            display: flex;
+            align-items: flex-end;
+
+            .carousel__section{
+                
+
+                h3{
+                    font-size: 15px;
+                    font-family: Good Pro Condensed,sans-serif;
+                    color: #9a9a9a;
+                    text-transform: uppercase;
+                    font-weight: lighter;
+                    padding-left: 30px;
+                    margin-bottom: 11px;
+                }
+                h2{
+                    font-family: Good Pro,sans-serif;
+                    font-size: 35px;
+                    color: #404040;
+                    font-weight: lighter;
+                    margin-bottom: 17px;
+                    letter-spacing: -.02em;
+                    padding-left: 30px;
+                }
+                p{
+                    font-size: 15px;
+                    max-height: 152px;
+                    overflow: hidden;
+                    line-height: 19px;
+                    padding: 0 0 19px 30px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+    .carousel__right{
+        flex: 1.8;
+        height: 462px;
+        background-color: #777;
+        position: relative;
+
+        .slider{
+
+            .slider__list{
+                
+                .slider__li{
+                    position: absolute;
+                    opacity: 0;
+                    width:100%;
+                    height: 100%;
+                    /* transition: opacity .5s ease; */
+
+                    img{
+                        width:100%;
+                        height: 100%;
+                    }
+                };
+                .slider__li--active{
+                    /* opacity: 1; */
+                    animation: fadeIn .5s ease-in-out forwards;
+                };
+              
+            }
+
+            .slide__dot{
+                .slide__dot__item{}
+                .slide__dot__item--active{}
+            }
+        }
+
+    }
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+@keyframes :global(fadeOut) {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }

@@ -1,5 +1,6 @@
 import React,{ Component } from "react";
 import Nav from "@components/Nav"
+import Banner from "@components/Banner"
 import { connect } from "@connects/homepage";
 
 @connect
@@ -10,10 +11,12 @@ class HomePage extends Component{
             mask_on
         } = this.props;
         return(
-            <div>
+            <div className="app__container">
                 <Nav
                     mask_on={mask_on}
                     switch_mask_apperence={switch_mask_apperence}
+                />
+                <Banner
                 />
             </div>
         );
