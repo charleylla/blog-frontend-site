@@ -1,6 +1,7 @@
 import React,{ Component } from "react";
 import Nav from "@components/Nav"
 import Banner from "@components/Banner"
+import TimeAxis from "@components/TimeAxis"
 import { connect } from "@connects/homepage";
 
 @connect
@@ -17,6 +18,8 @@ class HomePage extends Component{
                     switch_mask_apperence={switch_mask_apperence}
                 />
                 <Banner
+                />
+                <TimeAxis
                 />
             </div>
         );

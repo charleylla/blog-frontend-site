@@ -1,0 +1,19 @@
+/* nav layout goes here */
+:root{
+    --normal-height:60px;
+
+}
+
+
+.axis{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 120px;
+    color: #404040;
+    border-top: 1px solid #ececec;
+    background-color: #ececec;
+
+}
+
+
