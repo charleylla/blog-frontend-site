@@ -10,6 +10,7 @@ export default class Banner extends Component{
             timer: 0,
             num: 0,
             sliderList: [],
+            dotList: [],
         }
         this._initbind();
         this._init();
@@ -32,12 +33,18 @@ export default class Banner extends Component{
 
     carousel(){
         //ReactDOM.findDOMNode(this.sliderList).children
-        let { num, sliderList } = this.state
+        let { num, sliderList, dotList } = this.state
         let lis = sliderList.children
         //lis[num].className = "slider__li"
         let classArr = lis[num].className.split(" ")
         classArr.splice(-1,1)
         lis[num].className = classArr.join(" ")
+
+
+        let dots = dotList.children
+        classArr = dots[num].children[0].className.split(" ")
+        classArr.splice(-1,1)
+        dots[num].children[0].className = classArr.join(" ")
 
         num++;
         if(num === 3){
@@ -46,6 +53,7 @@ export default class Banner extends Component{
         this.setState({ num })
         //lis[num].className = "slider__li slider__li--active"  
         lis[num].className = lis[num].className + " slider__li--active"
+        dots[num].children[0].className = dots[num].children[0].className + " slide__dot__item--active"
     }
 
     render(){
@@ -90,7 +98,7 @@ export default class Banner extends Component{
                                 </a>
                             </li>
                         </ul>
-                        <div className="slide__dot">
+                        <div className="slide__dot" ref={(d) => { this.state.dotList = d; }}>
                             <a>
                                 <span className="slide__dot__item slide__dot__item--active"></span>
                             </a>
