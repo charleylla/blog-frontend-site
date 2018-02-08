@@ -139,13 +139,20 @@ export default class Nav extends Component{
                     </header>
                     <div 
                         ref="navcontent" 
-                        className={`animated hide nav__content ${fixClassName}`}
+                        className={`flex animated hide nav__content ${fixClassName}`}
                     >
-                        <ul>
-                            <li>首页</li>
-                            <li>专题</li>
-                            <li>关于</li>
-                        </ul>
+                        <div className="flex nav__content__left">
+                            <ul>
+                                <li>首页</li>
+                                <li>专题</li>
+                                <li>归档</li>
+                                <li>便利贴</li>
+                                <li>关于</li>
+                            </ul>
+                        </div>
+                        <div className="nav__content__center"></div>
+                        <div className="nav__content__right">
+                        </div>                        
                     </div>
                     <div 
                         ref="searchcontent"
