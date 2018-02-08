@@ -1,0 +1,11 @@
+:root{
+    --full-width:100%;
+    --arrow-height:135px;
+    --common-bg:#fff;
+}
+
+.arrow__main{
+    width:var(--full-width);
+    height: var(--arrow-height);
+    background: var(--common-bg);
+}
