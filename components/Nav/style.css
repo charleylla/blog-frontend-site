@@ -14,8 +14,13 @@
     --border-style:1px solid var(--border-color);
     --search-padding:14px;
     --search-font-size:20px;
+    --menu-font-size:28px;
+    --menu-padding:.3em 0;
     --menu-content-height:70vh;
     --search-content-height:50vh;
+    --flex-grow-left:0 0 20%;
+    --flex-grow-center:0 0 50%;
+    --flex-grow-right:0 0 30%;
 }
 @custom-media:--medium-viewport (width <= 720px)
 @media (--medium-viewport){
@@ -66,7 +71,7 @@ nav{
         }
         
         .header__left{
-            flex:1;
+            flex:var(--flex-grow-left);
             border-right:var(--border-style);
             .header__logo{
                 flex:2;
@@ -83,7 +88,7 @@ nav{
         }
 
         .header__center{
-            flex:3;
+            flex:var(--flex-grow-center);
             box-sizing:border-box;
             padding:var(--input-wrap-padding);
             justify-content:flex-start;
@@ -95,7 +100,7 @@ nav{
         }
 
         .header__right{
-            flex:2;
+            flex:var(--flex-grow-right);
             border-left:var(--border-style);
         }
     }
@@ -112,6 +117,36 @@ nav{
         box-sizing: border-box;
         &.hide{
             display:none;
+        }
+    }
+
+    .nav__content{
+        justify-content: space-between;
+        align-items: flex-start;
+        .nav__content__left,
+        .nav__content__right,
+        .nav__content__center{
+            height:var(--menu-content-height);
+            box-sizing:border-box;
+        }
+        .nav__content__left{
+            flex:var(--flex-grow-right);
+            border-right:var(--border-style);
+            align-items: flex-start;
+            overflow-y: auto;
+        }
+        .nav__content__right{
+            flex:var(--flex-grow-right);
+            border-left:var(--border-style)
+        }
+        .nav__content__left{
+            ul{
+                font-size:var(--menu-font-size);
+                padding-top:var(--normal-height);
+                li{
+                    padding:var(--menu-padding);
+                }
+            }
         }
     }
 
