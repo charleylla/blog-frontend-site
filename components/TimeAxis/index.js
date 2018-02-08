@@ -29,7 +29,16 @@ export default class TimeAxis extends Component{
         const { mask_on } = this.props;
         return(
             <div className="axis">
-               1111
+                <div className="timeaxis__arrow"><span></span></div>
+                <div className="timeaxis__tree">
+                    <ul className="timeaxis__leaves">
+                    
+                    </ul>
+                    <section className="timeaxis__trunk"></section>
+                    <ul className="timeaxis__leaves">
+                    
+                    </ul>         
+                </div>
                 <Mask mask_on={mask_on} />
                 <style jsx>{stylesheet}</style>
             </div>

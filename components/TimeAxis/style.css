@@ -6,14 +6,44 @@
 
 
 .axis{
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: column; */
     position: relative;
     top: 120px;
     color: #404040;
     border-top: 1px solid #ececec;
     background-color: #ececec;
 
+    .timeaxis__arrow{
+        background-color: #fff;
+        text-align: center;
+        height: 100px;
+        line-height: 100px;
+        
+        span{  
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-left: 2px solid #ececec;
+            border-bottom: 2px solid #ececec;
+            transform: rotate(-45deg);
+            cursor: pointer;
+        }
+    }
+
+    .timeaxis__tree{
+        display: flex;
+
+        .timeaxis__trunk{
+            flex: 1;
+            height: 100%;
+            background-color: #fff;
+            
+        }
+        .timeaxis__leaves{
+            flex: 3;
+        }
+    }
 }
 
 
